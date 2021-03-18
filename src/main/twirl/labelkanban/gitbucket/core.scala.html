@@ -117,6 +117,31 @@
                                 <button v-on:click="changeLaneOrder(rowKey, rowLane, false)"><i class="menu-icon octicon octicon-triangle-down"></i></button>
                                 <button v-on:click="changeLaneOrder(rowKey, rowLane, true)"><i class="menu-icon octicon octicon-triangle-up"></i></button>
                             </div>
+                            <div>
+                                <a v-bind:href="getLaneIssuesUrl(rowLane)" v-bind:disabled="!getLaneIssuesUrl(rowLane)">
+                                    {{rowKey == "Repositories" ? "Issues" : ""}}
+                                </a>
+                            </div>
+                            <div>
+                                <a v-bind:href="getLaneLabelsUrl(rowLane)" v-bind:disabled="!getLaneLabelsUrl(rowLane)">
+                                    {{rowKey == "Repositories" ? "Labels" : ""}}
+                                </a>
+                            </div>
+                            <div>
+                                <a v-bind:href="getLaneKanbanUrl(rowLane)"  v-bind:disabled="!getLaneKanbanUrl(rowLane)">
+                                    {{rowKey == "Repositories" ? "Kanban" : ""}}
+                                </a>
+                            </div>
+                            <div>
+                                <a v-bind:href="getLaneGanttUrl(rowLane)"  v-bind:disabled="!getLaneGanttUrl(rowLane)">
+                                    {{rowKey == "Repositories" ? "Gantt" : ""}}
+                                </a>
+                            </div>
+                            <div>
+                                <a v-bind:href="getLaneWikiUrl(rowLane)"  v-bind:disabled="!getLaneWikiUrl(rowLane)">
+                                    {{rowKey == "Repositories" ? "Wiki" : ""}}
+                                </a>
+                            </div>
                         </div>
                     </div>
                     <div class="kanban-column" v-for="colLane in getLanes(colKey, true)" @if(editable){

@@ -246,6 +246,51 @@ var kanbanApp = new Vue({
             return lane ? lane.htmlUrl : "";
         }
         ,
+        /**@param {lane} lane */
+        getLaneIssuesUrl: function (lane) {
+            if (this.rowKey != "Repositories") {
+                return "";
+            }
+
+            return lane ? lane.htmlUrl + "/issues" : "";
+        }
+        ,
+        /**@param {lane} lane */
+        getLaneLabelsUrl: function (lane) {
+            if (this.rowKey != "Repositories") {
+                return "";
+            }
+
+            return lane ? lane.htmlUrl + "/issues/labels" : "";
+        }
+        ,
+        /**@param {lane} lane */
+        getLaneKanbanUrl: function (lane) {
+            if (this.rowKey != "Repositories") {
+                return "";
+            }
+
+            return lane ? lane.htmlUrl + "/labelkanban" : "";
+        }
+        ,
+        /**@param {lane} lane */
+        getLaneGanttUrl: function (lane) {
+            if (this.rowKey != "Repositories") {
+                return "";
+            }
+
+            return lane ? lane.htmlUrl + "/gantt/7" : "";
+        }
+        ,
+        /**@param {lane} lane */
+        getLaneWikiUrl: function (lane) {
+            if (this.rowKey != "Repositories") {
+                return "";
+            }
+
+            return lane ? lane.htmlUrl + "/wiki" : "";
+        }
+        ,
         /**@returns {Object} */
         getContainerStyle: function () {
             return {
